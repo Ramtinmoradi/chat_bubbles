@@ -88,7 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   text: 'asdasdsadasd',
                   isSender: true,
                   color: Color(0xFF1B97F3),
-                  tail: true,
                   loading: true,
                   textStyle: TextStyle(
                     fontSize: 20,

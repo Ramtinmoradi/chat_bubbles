@@ -57,14 +57,14 @@ class BubbleNormal extends StatelessWidget {
         color: Color(0xFF97AD8E),
       );
     }
-    // if (delivered) {
-    //   stateTick = true;
-    //   stateIcon = Icon(
-    //     Icons.done_all,
-    //     size: 18,
-    //     color: Color(0xFF97AD8E),
-    //   );
-    // }
+    if (delivered) {
+      stateTick = true;
+      stateIcon = Icon(
+        Icons.done_all,
+        size: 18,
+        color: Color(0xFF97AD8E),
+      );
+    }
     if (seen) {
       stateTick = true;
       stateIcon = Icon(
