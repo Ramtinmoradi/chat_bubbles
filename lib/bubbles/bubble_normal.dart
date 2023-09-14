@@ -24,6 +24,7 @@ class BubbleNormal extends StatelessWidget {
   final bool seen;
   final TextStyle textStyle;
   final BoxConstraints? constraints;
+  final bool loading;
 
   BubbleNormal({
     Key? key,
@@ -36,6 +37,7 @@ class BubbleNormal extends StatelessWidget {
     this.sent = false,
     this.delivered = false,
     this.seen = false,
+    this.loading = false,
     this.textStyle = const TextStyle(
       color: Colors.black87,
       fontSize: 16,
@@ -69,6 +71,14 @@ class BubbleNormal extends StatelessWidget {
         Icons.done_all,
         size: 18,
         color: Color(0xFF92DEDA),
+      );
+    }
+    if (loading) {
+      stateTick = true;
+      stateIcon = const Icon(
+        Icons.schedule_outlined,
+        size: 16,
+        color: Color(0xFF97AD8E),
       );
     }
 
@@ -119,7 +129,8 @@ class BubbleNormal extends StatelessWidget {
                   ),
                   stateIcon != null && stateTick
                       ? Positioned(
-                          bottom: 4,
+                          bottom: 0,
+                          top: 0,
                           right: 6,
                           child: stateIcon,
                         )

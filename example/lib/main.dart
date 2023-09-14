@@ -85,10 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   date: new DateTime(now.year, now.month, now.day - 2),
                 ),
                 BubbleNormal(
-                  text: 'bubble normal without tail',
-                  isSender: false,
+                  text: 'asdasdsadasd',
+                  isSender: true,
                   color: Color(0xFF1B97F3),
-                  tail: false,
+                  tail: true,
+                  loading: true,
                   textStyle: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -101,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   sent: true,
                   seen: true,
                   delivered: true,
+                  loading: true,
                 ),
                 BubbleSpecialOne(
                   text: 'bubble special one with tail',
@@ -201,27 +203,27 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           MessageBar(
             onSend: (_) => print(_),
-            actions: [
-              InkWell(
-                child: Icon(
-                  Icons.add,
-                  color: Colors.black,
-                  size: 24,
-                ),
-                onTap: () {},
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8, right: 8),
-                child: InkWell(
-                  child: Icon(
-                    Icons.camera_alt,
-                    color: Colors.green,
-                    size: 24,
-                  ),
-                  onTap: () {},
-                ),
-              ),
-            ],
+            // actions: [
+            //   InkWell(
+            //     child: Icon(
+            //       Icons.add,
+            //       color: Colors.black,
+            //       size: 24,
+            //     ),
+            //     onTap: () {},
+            //   ),
+            //   Padding(
+            //     padding: EdgeInsets.only(left: 8, right: 8),
+            //     child: InkWell(
+            //       child: Icon(
+            //         Icons.camera_alt,
+            //         color: Colors.green,
+            //         size: 24,
+            //       ),
+            //       onTap: () {},
+            //     ),
+            //   ),
+            // ],
           ),
         ],
       ),

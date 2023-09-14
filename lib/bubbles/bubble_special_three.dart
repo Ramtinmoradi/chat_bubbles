@@ -27,7 +27,7 @@ class BubbleSpecialThree extends StatelessWidget {
     required this.text,
     this.color = Colors.white70,
     this.tail = true,
-    this.sent = false,
+   this.sent = false,
     this.delivered = false,
     this.seen = false,
     this.textStyle = const TextStyle(
@@ -66,6 +66,7 @@ class BubbleSpecialThree extends StatelessWidget {
       );
     }
 
+
     return Align(
       alignment: isSender ? Alignment.topRight : Alignment.topLeft,
       child: Padding(
@@ -73,6 +74,7 @@ class BubbleSpecialThree extends StatelessWidget {
         child: CustomPaint(
           painter: SpecialChatBubbleThree(
               color: color,
+
               alignment: isSender ? Alignment.topRight : Alignment.topLeft,
               tail: tail),
           child: Container(
