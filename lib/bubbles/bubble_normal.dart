@@ -127,7 +127,7 @@ class BubbleNormal extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  stateIcon != null && stateTick
+                  stateIcon != null && stateTick && isSender
                       ? Positioned(
                           bottom: 0,
                           top: 0,
