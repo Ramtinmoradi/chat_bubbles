@@ -125,7 +125,8 @@ class MessageBar extends StatelessWidget {
                 children: <Widget>[
                   ...actions,
                   Expanded(
-                    child: Container(
+                    child: Directionality(
+                      textDirection: TextDirection.rtl,
                       child: TextField(
                         controller: _textController,
                         keyboardType: TextInputType.multiline,
