@@ -42,10 +42,7 @@ class BubbleNormal extends StatelessWidget {
     this.seen = false,
     this.loading = false,
     this.senderNameTextStyle = const TextStyle(
-      color: Colors.black87,
-      fontSize: 16,
-      fontWeight: FontWeight.bold
-    ),
+        color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold),
     this.textStyle = const TextStyle(
       color: Colors.black87,
       fontSize: 16,
@@ -126,14 +123,14 @@ class BubbleNormal extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Column(
-                    crossAxisAlignment : CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    if(senderName!= null)  Padding(
+                      if(senderName!= null)  Padding(
                         padding: stateTick
-                            ? EdgeInsets.fromLTRB(12, 6, 28,0)
-                            : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                            ? EdgeInsets.fromLTRB(12, 6, 28, 0)
+                            : EdgeInsets.fromLTRB(12, 6, 12, 0),
                         child: Text(
-                          senderName!,
+                          'senderName!',
                           style: senderNameTextStyle,
                           textAlign: TextAlign.left,
                         ),
@@ -141,7 +138,7 @@ class BubbleNormal extends StatelessWidget {
                       Padding(
                         padding: stateTick
                             ? EdgeInsets.fromLTRB(12, 6, 28, 6)
-                            : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                            : EdgeInsets.fromLTRB(12, 6, 12, 6),
                         child: Text(
                           text,
                           style: textStyle,
@@ -150,11 +147,9 @@ class BubbleNormal extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   stateIcon != null && stateTick
                       ? Positioned(
-                          bottom: 0,
-                          top: 0,
+                          bottom: 6,
                           right: 6,
                           child: stateIcon,
                         )
