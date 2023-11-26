@@ -31,6 +31,9 @@ class BubbleNormalImage extends StatelessWidget {
   final bool sent;
   final bool delivered;
   final bool seen;
+  final String? senderName;
+  final TextStyle senderNameTextStyle;
+
   final void Function()? onTap;
 
   const BubbleNormalImage({
@@ -39,6 +42,9 @@ class BubbleNormalImage extends StatelessWidget {
     required this.image,
     this.bubbleRadius = BUBBLE_RADIUS_IMAGE,
     this.isSender = true,
+    this.senderName,
+    this.senderNameTextStyle = const TextStyle(
+        color: Colors.black87, fontSize: 16, fontWeight: FontWeight.bold),
     this.color = Colors.white70,
     this.tail = true,
     this.sent = false,
@@ -117,9 +123,26 @@ class BubbleNormalImage extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(bubbleRadius),
-                            child: image,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              if(senderName!= null)  Padding(
+                                padding: stateTick
+                                    ? EdgeInsets.fromLTRB(12, 6, 12, 0)
+                                    : EdgeInsets.fromLTRB(12, 6, 12, 0),
+                                child: Text(
+                                  senderName!,
+                                  style: senderNameTextStyle,
+                                  // textAlign: TextAlign.right,
+                                ),
+                              ),
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(bubbleRadius),
+                                  child: image,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
