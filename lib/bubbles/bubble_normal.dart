@@ -18,11 +18,13 @@ class BubbleNormal extends StatelessWidget {
   final bool isSender;
   final Color color;
   final String text;
+  final String? senderName;
   final bool tail;
   final bool sent;
   final bool delivered;
   final bool seen;
   final TextStyle textStyle;
+  final TextStyle senderNameTextStyle;
   final BoxConstraints? constraints;
   final bool loading;
 
@@ -30,6 +32,7 @@ class BubbleNormal extends StatelessWidget {
     Key? key,
     required this.text,
     this.constraints,
+    this.senderName,
     this.bubbleRadius = BUBBLE_RADIUS,
     this.isSender = true,
     this.color = Colors.white70,
@@ -38,6 +41,11 @@ class BubbleNormal extends StatelessWidget {
     this.delivered = false,
     this.seen = false,
     this.loading = false,
+    this.senderNameTextStyle = const TextStyle(
+      color: Colors.black87,
+      fontSize: 16,
+      fontWeight: FontWeight.bold
+    ),
     this.textStyle = const TextStyle(
       color: Colors.black87,
       fontSize: 16,
@@ -117,16 +125,32 @@ class BubbleNormal extends StatelessWidget {
               ),
               child: Stack(
                 children: <Widget>[
-                  Padding(
-                    padding: stateTick
-                        ? EdgeInsets.fromLTRB(12, 6, 28, 6)
-                        : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-                    child: Text(
-                      text,
-                      style: textStyle,
-                      textAlign: TextAlign.left,
-                    ),
+                  Column(
+                    crossAxisAlignment : CrossAxisAlignment.start,
+                    children: [
+                    if(senderName!= null)  Padding(
+                        padding: stateTick
+                            ? EdgeInsets.fromLTRB(12, 6, 28, 6)
+                            : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: Text(
+                          senderName!,
+                          style: senderNameTextStyle,
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Padding(
+                        padding: stateTick
+                            ? EdgeInsets.fromLTRB(12, 6, 28, 6)
+                            : EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                        child: Text(
+                          text,
+                          style: textStyle,
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
                   ),
+
                   stateIcon != null && stateTick
                       ? Positioned(
                           bottom: 0,
