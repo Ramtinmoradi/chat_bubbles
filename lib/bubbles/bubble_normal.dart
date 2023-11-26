@@ -130,7 +130,7 @@ class BubbleNormal extends StatelessWidget {
                             ? EdgeInsets.fromLTRB(12, 6, 28, 0)
                             : EdgeInsets.fromLTRB(12, 6, 12, 0),
                         child: Text(
-                          'senderName!',
+                          senderName!,
                           style: senderNameTextStyle,
                           textAlign: TextAlign.left,
                         ),
