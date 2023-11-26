@@ -123,16 +123,16 @@ class BubbleNormal extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:!isSender ? CrossAxisAlignment.start : CrossAxisAlignment.end,
                     children: [
-                      if(senderName!= null)  Padding(
+                    /*  if(senderName!= null)*/  Padding(
                         padding: stateTick
                             ? EdgeInsets.fromLTRB(12, 6, 28, 0)
                             : EdgeInsets.fromLTRB(12, 6, 12, 0),
                         child: Text(
-                          senderName!,
+                          'senderName!',
                           style: senderNameTextStyle,
-                          textAlign: TextAlign.left,
+                          // textAlign: TextAlign.right,
                         ),
                       ),
                       Padding(
