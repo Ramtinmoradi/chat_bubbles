@@ -126,14 +126,17 @@ class BubbleNormalImage extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              if(senderName!= null)  Padding(
-                                padding: stateTick
-                                    ? EdgeInsets.fromLTRB(12, 6, 12, 0)
-                                    : EdgeInsets.fromLTRB(12, 6, 12, 0),
-                                child: Text(
-                                  senderName!,
-                                  style: senderNameTextStyle,
-                                  // textAlign: TextAlign.right,
+                              if(senderName!= null)  GestureDetector(
+                                onTap: () {},
+                                child: Padding(
+                                  padding: stateTick
+                                      ? EdgeInsets.fromLTRB(12, 6, 12, 0)
+                                      : EdgeInsets.fromLTRB(12, 6, 12, 0),
+                                  child: Text(
+                                    senderName!,
+                                    style: senderNameTextStyle,
+                                    // textAlign: TextAlign.right,
+                                  ),
                                 ),
                               ),
                               Expanded(
