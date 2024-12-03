@@ -29,7 +29,7 @@ dev_dependencies:
     sdk: flutter
   chat_bubbles:
     path: ../
-  audioplayers: ^3.0.1
+  audioplayers: ^6.1.0
   cached_network_image: ^3.2.3
 
 
